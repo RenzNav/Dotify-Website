@@ -1,0 +1,190 @@
+/* Set base font and style for all elements */
+* {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Full-screen centered layout with gradient background */
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #2563EB, #7C3AED);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* White box container */
+.container {
+    width: 100%;
+    max-width: 540px;
+    padding: 70px 30px 60px;
+    margin: 0 auto;
+    border-radius: 40px;
+    background-color: #fff;
+    align-self: center;
+    transition: all 0.4s ease;
+}
+
+/* Expanded state for container after button click */
+.container.expanded {
+    max-height: 800px;
+    padding-bottom: 100px;
+}
+
+/* Layout for input and output area */
+.text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Heading style */
+.text-container h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
+    background: linear-gradient(90deg, #2563EB, #7C3AED);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Caption under heading */
+.text-container p {
+    text-align: center;
+    font-size: 1rem;
+    color: #4b5563;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    margin-top: 0;
+}
+
+/* Fade-in animation for header, input, button, and caption */
+.text-container h1,
+.text-container input,
+.text-container button,
+.text-container p {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Delay animation for input, button, and caption */
+.text-container input,
+.text-container button,
+.text-container p {
+    animation-delay: 0.2s;
+}
+
+/* Fade-in keyframe */
+@keyframes fadeInUp {
+  to {
+        opacity: 1;
+        transform: translateY(0);
+  }
+}
+
+/* Input box style */
+.text-container input {
+    padding: 20px;
+    background-color: #f1f1f1;
+    border: 2px solid #f1f1f1;
+    border-radius: 14px;
+    margin-bottom: 18px;
+    outline: none;
+}
+
+/* Button style */
+.text-container button {
+    background-color: #c7d2fe;
+    color: #1e3a8a;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 24px;
+    width: 100%;
+    max-width: 130px;
+    align-self: center;
+    border: none;
+    border-radius: 14px;
+}
+
+/* Button hover effect */
+.text-container button:hover {
+    background-color: #818cf8;
+    transform: scale(1.03);
+    box-shadow: 0 3px 14px rgba(37, 99, 235, 0.2);
+}
+
+/* Braille output styling */
+.braille-output {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 40px;
+    letter-spacing: 12px;
+    color: #1e3a8a;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(10px);
+}
+
+/* Show braille with animation */
+.braille-output.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Copy to clipboard button */
+#copyBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    transition: transform 0.2s ease;
+    display: none;
+}
+
+#copyBtn.visible {
+    display: flex;
+}
+
+#copyBtn:hover {
+    transform: scale(1.1);
+}
+
+#copyBtn img {
+    width: 28px;
+    height: 28px;
+    filter: invert(18%) sepia(87%) saturate(598%) hue-rotate(212deg) brightness(97%) contrast(94%);
+    transition: filter 0.3s ease, transform 0.2s ease;
+}
+
+#copyBtn:hover img {
+    transform: scale(1.1);
+}
+
+
+/* Footer below the main content */
+.footer {
+    text-align: center;
+    color: #e5e7eb;
+    font-size: 0.875rem;
+    margin-top: 40px;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

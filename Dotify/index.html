@@ -1,0 +1,36 @@
+<!-- This webpage's intention is to be able to convert and translate english to basic braille.-->
+<!-- Bridging written English and Braille, one dot at a time.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!-- CSS -->
+     <link rel="stylesheet" href="style.css">
+    <title>Dotify</title>
+</head>
+<body>
+    <div class="container">
+        <div class="text-container">
+            <h1>Dotify</h1>
+            <p>Bridging written English and Braille, one dot at a time.</p>
+            <input type="text" placeholder="Say it in Braille...">
+            <button>Dotify</button>
+            <p class="braille-output"></p>
+            <button id="copyBtn" aria-label="Copy Braille">
+                <img src="clipboard-solid-full.svg" alt="Copy to clipboard" />
+            </button>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>Built for access. Designed with intent.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
